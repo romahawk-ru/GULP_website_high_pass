@@ -1,0 +1,316 @@
+.hero {
+  background-color: var(--color-light);
+
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 68px;
+  }
+
+  &__works {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 343px 257px;
+    gap: 30px;
+    height: 100%;
+  }
+
+  &-masters {
+    position: relative;
+    margin-top: 6px;
+    padding: 405px 60px 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__text {
+      display: inline-block;
+      margin: 0 0 3px 0;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-light);
+    }
+
+    &__title {
+      margin: 0 0 19px -1px;
+      max-width: 427px;
+      font-family: 'TTFirsNeue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 103%;
+      color: var(--color-light);
+    }
+
+    &__link {
+      display: inline-block;
+      margin: 0;
+      padding: 0.8em 1.21em;
+      border: 3px solid transparent;
+      font-weight: 700;
+      line-height: 19px;
+      color: var(--color-light);
+      background-color: var(--color-primary);
+      transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      outline: none;
+
+      &:hover {
+        background-color: var(--color-tuscany);
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      &:focus-visible {
+        border-color: var(--color-grenadier);
+        background-color: var(--color-primary);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+
+      &:active {
+        border-color: var(--color-grenadier);
+        background-color: var(--color-grenadier);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+    }
+
+    &__hashtag {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 7px 15px 7px 14px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--color-light);
+      background-color: var(---color-shaft);
+    }
+  }
+
+  &-works {
+    &__item {
+      position: relative;
+
+      &:first-child {
+        grid-column: 1 / 6 span;
+        grid-row: 1 / 2 span;
+      }
+
+      &:nth-child(2) {
+        grid-column: 7 / 6 span;
+        grid-row: 1 / 1 span;
+      }
+
+      &:nth-child(3) {
+        grid-column: 7 / 3 span;
+        grid-row: 2 / 1 span;
+      }
+
+      &:last-child {
+        grid-column: 10 / 3 span;
+        grid-row: 2 / 1 span;
+      }
+
+      &--parent {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template: minmax(25px, auto) minmax(auto, 1fr) / 1fr;
+        row-gap: 18px;
+      }
+    }
+
+    &-item {
+      &__inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 60px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__image {
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__title {
+      margin: 0;
+      font-family: 'TTFirsNeue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 104%;
+      color: var(--color-dark);
+    }
+
+    &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    padding: 0;
+
+    &__container {
+      padding-top: 34px;
+      padding-bottom: 68px;
+    }
+
+    &__works {
+      grid-template-rows: 407px 186px;
+    }
+
+    &-works {
+
+      &__title {
+        margin: 1px 0 0 0;
+      }
+
+      &-item {
+        &__inner {
+          padding: 30px;
+        }
+      }
+
+      &__item--parent {
+        row-gap: 25px;
+      }
+    }
+
+    &-masters {
+      &__title {
+        margin: 0 0 21px 0px;
+        font-size: 34px;
+        line-height: 101%;
+      }
+
+      &__text {
+        margin: 0 0 9px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    &__container {
+      padding-top: 81px;
+    }
+    &__works {
+      grid-template-rows: 289px 133px;
+    }
+
+    &-works {
+      &__title {
+        margin: -2px 0 0 0;
+        font-size: 22px;
+      }
+      &__item--parent {
+        row-gap: 17px;
+      }
+    }
+
+    &-masters {
+      &__title {
+        margin: 0 0 22px -1px;
+        font-size: 34px;
+        line-height: 91%;
+      }
+
+      &__text {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .hero {
+    &__container {
+      padding-top: 75px;
+      padding-bottom: 50px;
+    }
+
+    &__works {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 422px 244px 105px;
+    }
+
+    &-works {
+      &__title {
+        margin: 5px 0 0 0;
+        font-size: 18px;
+        line-height: 104%;
+      }
+      &__item--parent {
+        row-gap: 16px;
+      }
+      &__item {
+        &:first-child {
+          grid-column: 1 / 2 span;
+          grid-row: 1 / 1 span;
+        }
+        &:nth-child(2) {
+          grid-column: 1 / 2 span;
+          grid-row: 2 / 1 span;
+        }
+        &:nth-child(3) {
+          grid-column: 1 / 1 span;
+          grid-row: 3 / 1 span;
+        }
+        &:last-child {
+          grid-column: 2 / 1 span;
+          grid-row: 3 / 1 span;
+        }
+        &--child {
+          &:first-child {
+            grid-column: 1 / 2 span;
+            grid-row: 1 / 1 span;
+          }
+          &:last-child {
+            grid-column: 1 / 2 span;
+            grid-row: 2 / 1 span;
+          }
+        }
+      }
+    }
+
+    &-masters {
+      &__title {
+        margin: 0 0 14px -2px;
+        font-size: 24px;
+        line-height: 108%;
+      }
+      &__text {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+      }
+      &__link {
+        padding: 0.55em 1.4em;
+        font-size: 14px;
+      }
+      &__hashtag {
+        top: 6px;
+        right: 6px;
+        padding: 4px 7px 4px 7px;
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+  }
+}

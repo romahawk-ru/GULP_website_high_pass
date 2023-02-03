@@ -1,0 +1,476 @@
+.contacts {
+  &__container {
+    padding-bottom: 70px;
+  }
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &-form {
+    &__title {
+      margin: -6px 0 6px 0;
+      font-family: 'TTFirsNeue';
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 22px;
+      color: var(--color-dark);
+    }
+
+    &__text {
+      margin: 0 0 14px 0;
+      line-height: 22px;
+      color: var(--color-dusty);
+    }
+
+    &__input {
+      margin: 0 0 21px 0;
+      padding: 14px 22px 14px 22px;
+      width: 100%;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--color-dark);
+      border: 1px solid var(--color-mercury);
+      background-color: var(--color-mercury);
+      transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+      &::placeholder {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: var(--color-dusty);
+        transition: color 0.3s ease-in-out;
+      }
+
+      &:hover {
+        &::placeholder {
+          color: var(--color-primary);
+          transition: color 0.3s ease-in-out;
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+        border-color: var(--color-primary);
+        transition: border-color 0.3s ease-in-out;
+
+        &::placeholder {
+          color: var(--color-dusty);
+          transition: color 0.3s ease-in-out;
+        }
+      }
+
+      &:active {
+        color: var(--color-dark);
+        border-color: var(--color-mercury);
+        transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      }
+
+      &--textarea {
+        height: 150px;
+        resize: none;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__btn {
+      padding: 0.78em 1.22em 0.78em 1.22em;
+      border: 3px solid transparent;
+      transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      outline: none;
+
+      &:hover {
+        background-color: var(--color-tuscany);
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      &:focus-visible {
+        border-color: var(--color-grenadier);
+        background-color: var(--color-primary);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+
+      &:active {
+        border-color: var(--color-grenadier);
+        background-color: var(--color-grenadier);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+  }
+
+  &-inner {
+    &__item {
+      &:first-child {
+        grid-column: 1 / span 8;
+      }
+
+      &:nth-child(2) {
+        grid-column: 9 / span 4;
+      }
+    }
+
+    &-item {
+      &__absolut {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        margin: 0;
+        padding: 175px 50px 150px 60px;
+        width: 410px;
+        height: 99.8%;
+        background-color: rgba(32, 32, 32, 0.85);
+
+        &-title {
+          margin: 0 0 5px 0;
+          color: var(--color-light);
+        }
+
+        &-text {
+          margin: 0 0 2px 0;
+          line-height: 28px;
+          color: var(--color-silver);
+        }
+
+        &-link {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin: 0;
+          font-family: 'TTFirsNeue';
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 21px;
+          color: var(--color-light);
+
+          &-icon {
+            width: 22px;
+            height: 22px;
+          }
+
+          & span {
+            color: var(--color-primary);
+          }
+        }
+
+        &-btn {
+          position: inherit;
+          top: 20px;
+          right: 20px;
+          width: 20px;
+          height: 20px;
+
+          &:hover svg circle {
+            fill: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ymaps
+
+html, body, #map {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.customControl {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 54px 50px 29px 60px;
+  width: 410px;
+  height: 460px;
+  background-color: rgba(20, 20, 20, 0.85);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-dusty);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 1px;
+    background-color: var(--color-light);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 1px;
+    background-color: var(--color-light);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    background-color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-tuscany);
+  }
+
+  &:active {
+    background-color: var(--color-grenadier);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  &> h3 {
+    margin: 0 0 4px 0;
+    font-family: 'TTFirsNeue', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--color-light);
+  }
+
+  &> p {
+    margin: 0 0 2px 0;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--color-silver);
+  }
+
+  &> a {
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-family: "TTFirsNeue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-primary);
+  }
+}
+
+
+[class*="controls__toolbar"] {
+  margin: 0 !important;
+}
+
+@media (max-width: 1280px) {
+  .contacts {
+    &__inner {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    &-inner {
+      &__item {
+        &:first-child {
+          grid-column: 1 / 5 span;
+        }
+        &:last-child {
+          grid-column: 6 / 3 span;
+        }
+      }
+    }
+    &-form {
+      &__title {
+        margin: -7px 0 5px 0;
+      }
+    }
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .customControl {
+    top: 303px;
+    padding: 21px 30px 15px 30px;
+    width: 100%;
+    height: 157px;
+  }
+
+  .content {
+    position: relative;
+    &> p {
+      max-width: 280px;
+    }
+    &> a {
+      position: absolute;
+      top: 90px;
+      left: 148px;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .contacts {
+    &__title {
+      margin-bottom: 22px;
+    }
+    &__inner {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 460px 439px;
+      gap: 30px;
+    }
+    &-inner {
+      &__item {
+        &:first-child {
+          grid-column: 1/ 6 span;
+          grid-row: 1 / 1 span;
+        }
+        &:last-child {
+          grid-column: 1/ 4 span;
+          grid-row: 2 / 1 span;
+        }
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    justify-content: flex-start;
+    &> p {
+      margin-bottom: 3px;
+      max-width: 420px;
+    }
+    &> a {
+      position: inherit;
+      top: auto;
+      left: auto;
+    }
+  }
+
+  .customControl {
+    padding: 24px 30px 15px 30px;
+  }
+
+}
+
+@media (max-width: 568px) {
+  .contacts {
+    &__container {
+      padding: 0;
+      max-width: 100%;
+      padding-bottom: 50px;
+    }
+    &__title {
+      padding: 0 12px;
+      margin-bottom: 14px;
+    }
+    &__inner {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 472px 429px;
+      gap: 23px;
+    }
+    &-inner {
+      &__item {
+        &:first-child {
+          grid-column: 1/2 span;
+          grid-row: 1/1 span;
+        }
+        &:last-child {
+          grid-column: 1/2 span;
+          grid-row: 2/1 span;
+        }
+      }
+    }
+    &__form {
+      padding: 0px 12px 7px 13px;
+    }
+    &-form {
+      &__title {
+        margin: 0px 0 8px 0;
+        font-size: 18px;
+        line-height: 22px;
+      }
+      &__text {
+        margin: 0 0 15px 0;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      &__input {
+        padding: 9px 21px 10px 21px;
+        &::placeholder {
+          font-size: 14px;
+          line-height: 16px;
+        }
+        &--textarea {
+          padding: 12px 21px 10px 21px;
+        }
+      }
+      &__btn {
+        padding: 0.7em 1.4em 0.6em 1.3em;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .customControl {
+    top: 315px;
+    padding: 26px 25px 11px 11px;
+  }
+
+  .content {
+    &> h3 {
+      margin: 0 0 11px 0;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &> p {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    &> a {
+      margin: 0 0 0 -2px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .closeButton {
+    right: 11px;
+  }
+
+}

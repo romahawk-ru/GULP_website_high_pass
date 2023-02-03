@@ -1,0 +1,28 @@
+<section class="contacts">
+  <div class="container contacts__container">
+    <h2 class="title contacts__title">Контакты</h2>
+    <div class="contacts__inner">
+      <div class="contacts-inner__item">
+        <div id="map"></div>
+      </div>
+      <div class="contacts-inner__item">
+        <form action="https://jsonplaceholder.typicode.com/posts" class="contacts__form" autocomplete method="POST">
+          <h2 class="contacts-form__title">Оставить заявку</h2>
+          <p class="contacts-form__text">
+            Оставьте ваши данные, указав в графе &ldquo;Комментарий&rdquo; желаемые время и дату съёмки или другого мероприятия
+          </p>
+          <label for="contscts-name">
+            <input class="contacts-form__input" type="text" name="name" id="contscts-name" placeholder="Имя">
+          </label>
+          <label for="contscts-email">
+            <input class="contacts-form__input" type="email" name="email" id="contscts-email" placeholder="Email">
+          </label>
+          <label for="contscts-comment">
+            <textarea class="contacts-form__input contacts-form__input--textarea" name="message" id="contscts-comment"  placeholder="Комментарий"></textarea>
+          </label>
+          <button class="btn-reset btn contacts-form__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title {
+  margin: 0;
+  font-family: 'TTFirsNeue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 0;
+  padding: 0.98em 1.4em;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1320px;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+
+/* yandex maps */
+// Делает карту черно-белой
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+// Скрывает эл-ты управления картой
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+
+@media (max-width: 568px) {
+  .title {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
